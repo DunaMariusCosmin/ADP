@@ -20,14 +20,22 @@ public class MultiThread {
 	        Thread[] threads = new Thread[nrThreads];
 	        
 	        for (int th = 0; th < nrThreads; th++) {
-	        	
+	        	final int thNr = th; 
 				int thread_cnt = th;
 	        	threads[th] = new Thread(new Runnable() {
 					@Override
 					public void run() {
 						
 						int n = aRows / nrThreads;
-						for (int i = (n * thread_cnt); i < (thread_cnt + 1) * n; i++) { 
+						
+
+						int max = (thread_cnt + 1) * n;
+						
+						if (thNr == (nrThreads-1)) {
+							max = aRows;
+						}
+						
+						for (int i = (n * thread_cnt); i < max; i++) { 
 				            for (int j = 0; j < bColumns; j++) { 
 				                for (int k = 0; k < aColumns; k++) { 
 				                    toReturn[i][j] += a[i][k] * b[k][j];
