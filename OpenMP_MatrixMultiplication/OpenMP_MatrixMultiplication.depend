@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1490140492 source:c:\users\cosmin\desktop\new folder (2)\openmp_matrixmultiplication\main.cpp
+	<omp.h>
+	<stdlib.h>
+	<iostream>
+	<random>
+
