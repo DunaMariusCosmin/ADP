@@ -37,6 +37,7 @@ int main()
 
     #pragma omp parallel for
 	for (int i = 0; i < rowsA; i++) {
+		cout <<"Row:"<<i<< " thread:" <<omp_get_thread_num()endl;
 		for (int j = 0; j < colsB; j++) {
 			for (int k = 0; k < colsA; k++) {
 				c[i][j] += a[i][k] * b[k][j];
